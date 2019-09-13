@@ -1477,7 +1477,7 @@ var mentionned = message.mentions.users.first();
 });
 
 client.on('message', message => {
-    if (message.content === "!roles) {
+    if (message.content === "!roles") {
         if(!message.channel.guild) return message.reply('** This command only for servers **');
 
         var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
