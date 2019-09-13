@@ -3431,7 +3431,7 @@ client.on('message', message =>{
 
  client.on('ready', function(){
     var ms = 10000 ;
-    var setGame = [' !help','دماء Bot','Bot by دماء',' !invite to invite me ',' I am in 12 Server',' FreeFire'];
+    var setGame = ['!help','دماء Bot','Bot by دماء','!invite to invite me ','I am in 12 Server','FreeFire'];
     var i = -1;
     var j = 0;
     setInterval(function (){
