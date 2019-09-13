@@ -49,7 +49,7 @@ const developers = ["436918120184021012"]
 
 
 client.on('ready', () => { //code bot not leave room voice //Bot Is Online
-    client.channels.get("605531901725376516").join(); //by :n3k4a 
+    client.channels.get("621836567539089438").join(); //by :n3k4a 
     });
 
 client.on("message", (message) => {
@@ -112,7 +112,7 @@ client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  if (message.author.id !== '436918120184021012') return;
+  if (message.author.id !== '622045695628541967') return;
 
 if (message.content.startsWith(prefix + '1')) {
   client.user.setGame(argresult);
@@ -153,7 +153,7 @@ client.on('message', message => {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``Bot by MrBloods`` ')
+            .setTitle('``Bot by دِمَــــــــآء`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``servers``', [client.guilds.size], true)
@@ -168,18 +168,13 @@ client.on('message', message => {
 });
 
 client.on('message', msg => {
-  if(msg.content === 'Hello')
-  msg.reply('Hi ')
+  if(msg.content === 'سلام عليكم')
+  msg.reply('وعليكم السلام ')
 });
 
 client.on('message', msg => {
-  if(msg.content === 'Back')
-  msg.reply('Welcome Back')
-});
-
-client.on('message', msg => {
-  if(msg.content === 'Ip')
-  msg.reply('mc.xlegendarygal.me ')
+  if(msg.content === 'باك')
+  msg.reply('ولكم باك')
 });
 
 client.on('message', msg => {
@@ -188,13 +183,13 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if(msg.content === 'MrBloods')
-  msg.reply('What do u want')
+  if(msg.content === 'دماء')
+  msg.reply('هلا')
 });
 
 client.on('message', msg => {
-  if(msg.content === 'Bye')
-  msg.reply('Bye ❤')
+  if(msg.content === 'سلام')
+  msg.reply('سلام ❤')
 });
  
 client.on('message', message => {
@@ -427,7 +422,7 @@ message.channel.send(E2Mdax);
 });
 
 client.on('message', message=>{
-    if (message.content ===  "اخرج"){
+    if (message.content ===  "y99383197"){
     message.guild.leave();
             }
 }); //Toxic Codes
@@ -533,7 +528,7 @@ client.on('message', message => {
             .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
             .addField('**Users**🔮 :' ,`[ ${client.users.size} ]` , true)
             .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
-            .addField('**Bot Owner**👑 :' , `[<@507533148897411082>]` , true)
+            .addField('**Bot Owner**👑 :' , `[<@436918120184021012>]` , true)
             .setFooter(message.author.username, message.author.avatarURL)
     })
 }
@@ -581,7 +576,7 @@ client.on('message', message => {
               const Embed11 = new Discord.RichEmbed()
         .setColor("RANDOM")
         
-    .setDescription("Link of the server- Bot by MrBloods")
+    .setDescription("Link of the server- Bot by دِمَــــــــآء")
       message.author.sendEmbed(Embed11)
     }
 });
@@ -1480,7 +1475,7 @@ var mentionned = message.mentions.users.first();
 });
 
 client.on('message', message => {
-    if (message.content === "!role") {
+    if (message.content === "!roles") {
         if(!message.channel.guild) return message.reply('** This command only for servers **');
 
         var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
@@ -1541,7 +1536,7 @@ client.on("message", message => {
      const embed = new Discord.RichEmbed() 
          .setColor("#00FF00")
          .setThumbnail(message.author.avatarURL)
-         .setDescription(`**Help | XLegendaryGalaxy**
+         .setDescription(`**Help | Freefire**
 
         **__General orders__**
 **
@@ -1606,7 +1601,7 @@ client.on("message", message => {
 『 The bot have a log !! 』
 『 Thanks for using the bot 』
 
-       Bot By MrBloods** `)
+       Bot By دِمَــــــــآء** `)
      
             
    message.author.sendEmbed(embed)
@@ -1941,7 +1936,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Bot by MrBloods | !help `,"http://twitch.tv/MrBloods")
+client.user.setGame(`Bot by دِمَــــــــآء | !help `,"http://twitch.tv/Bloods")
 client.user.setStatus("dnd")
 });
 
@@ -2155,8 +2150,8 @@ client.on('message', message => {
 });
 
 client.on('ready',async () => {
-  let GUILDID = '605524619268718592'; // اي دي السيرفر  
-  let CHANNELID = '605524619268718596'; // اي دي الروم
+  let GUILDID = '621834641367629827'; // اي دي السيرفر  
+  let CHANNELID = '621836567539089438'; // اي دي الروم
   voiceStay(GUILDID, CHANNELID);
   function voiceStay(guildid, channelid) {
     if(!guildid) throw new Error('Syntax: voiceStay function requires guildid');
@@ -2214,7 +2209,7 @@ client.on('guildMemberAdd', member => {
     const embed = new Discord.RichEmbed()
     
     .setColor("RANDOM")
-    .setDescription(`**Date: Discord account ${createdAt.toFixed(0)} Day**`)
+    .setDescription(`**Date: ${createdAt.toFixed(0)} Day**`)
     .setAuthor(member.user.tag, member.user.avatarURL);
     channel.sendEmbed(embed);
 
