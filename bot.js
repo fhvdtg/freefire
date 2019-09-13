@@ -2710,32 +2710,33 @@ client.on('message', message => {
     if(!message.channel.guild) return message.channel.send('**This Command Only For Servers !**')
             if (!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(`**${message.author.username} You Dont Have** ``MANAGE_ROLES`` **Premission**`);
 
-                     message.guild.createRole({ name: "Our Bot", color: "#47596F", permissions: [] })
-	             message.guild.createRole({ name: "Owner", color: "#580202", permissions: [] })
-                     message.guild.createRole({ name: "Developer", color: "#47596F", permissions: [] })
-                     message.guild.createRole({ name: "Co-Owner", color: "#B70000", permissions: [] })
-                     message.guild.createRole({ name: "Head-Admin", color: "#080FF1", permissions: [] })
-                     message.guild.createRole({ name: "Admin", color: "#080FF1", permissions: [] })
-                     message.guild.createRole({ name: "Sir-Mod", color: "#AB7003", permissions: [] })
-	             message.guild.createRole({ name: "Support Team", color: "#ffffff", permissions: [] })
-	             message.guild.createRole({ name: "Muted", color: "#ffffff", permissions: [] })
-                     message.guild.createRole({ name: "Mod", color: "#CECE03", permissions: [] })
-	             message.guild.createRole({ name: "Test: Mod", color: "#936171", permissions: [] })
-                     message.guild.createRole({ name: "Builder+", color: "#206617", permissions: [] })
-                     message.guild.createRole({ name: "Builder", color: "#2AA41A", permissions: [] })
-	             message.guild.createRole({ name: "Test: Builder", color: "#936171", permissions: [] })
-	             message.guild.createRole({ name: "Galaxy", color: "#1a56d6", permissions: [] })
-	             message.guild.createRole({ name: "Divine", color: "#afcaa5", permissions: [] })
-	             message.guild.createRole({ name: "Ultra", color: "#907cb9", permissions: [] })
-                     message.guild.createRole({ name: "MVP+", color: "#E400B4", permissions: [] })
-                     message.guild.createRole({ name: "MVP", color: "#753467", permissions: [] })
-	             message.guild.createRole({ name: "VIP+", color: "#5B00E6", permissions: [] })
-	             message.guild.createRole({ name: "VIP", color: "#452872", permissions: [] })
-	             message.guild.createRole({ name: "Member", color: "#060F4B", permissions: [] })
-	             message.guild.createRole({ name: "Bots", color: "#2C1305", permissions: [] })
-	    
+                     message.guild.createRole({ name: "Our Bot", color: "#ffffff", permissions: [] })
+                     message.guild.createRole({ name: "The One", color: "#090909", permissions: [] })
+                     message.guild.createRole({ name: "Head Admins", color: "#B70000", permissions: [] })
+                     message.guild.createRole({ name: "Admins", color: "#ff0000", permissions: [] })
+                     message.guild.createRole({ name: "Discord Devs", color: "#149cdf", permissions: [] })
+                     message.guild.createRole({ name: "Sir Mods", color: "#ff8100", permissions: [] })
+                     message.guild.createRole({ name: "Mods", color: "#fff700", permissions: [] })
+                     message.guild.createRole({ name: "Support Team", color: "#ffffff", permissions: [] })
+                     message.guild.createRole({ name: "-----Staff Ranks-----", color: "#ffffff", permissions: [] })
+                     message.guild.createRole({ name: "Helpers", color: "#2dde76", permissions: [] })
+                     message.guild.createRole({ name: "منضمي الفعاليات", color: "#adeca0", permissions: [] })
+                     message.guild.createRole({ name: "Active 5", color: "#121c5c", permissions: [] })
+                     message.guild.createRole({ name: "Active 4", color: "#1133ff", permissions: [] })
+                     message.guild.createRole({ name: "Active 3", color: "#134181", permissions: [] })
+                     message.guild.createRole({ name: "Active 2", color: "#0084ff", permissions: [] })
+                     message.guild.createRole({ name: "Active 1", color: "#0cbfe5", permissions: [] })
+                     message.guild.createRole({ name: "VIP", color: "#278647", permissions: [] })
+                     message.guild.createRole({ name: "----- Helpers Ranks-----", color: "#ffffff", permissions: [] })
+                     message.guild.createRole({ name: "FreeFire", color: "#797de1", permissions: [] })
+                     message.guild.createRole({ name: "Bots", color: "#ffffff", permissions: [] })
+                     message.guild.createRole({ name: "Music", color: "#ffffff", permissions: [] })
+                     message.guild.createRole({ name: "-----Members Ranks-----", color: "#ffffff", permissions: [] })
+                     message.guild.createRole({ name: "Girls", color: "#f5c0e6", permissions: [] })
+                     message.guild.createRole({ name: "Muted", color: "#ffffff", permissions: [] })
+      
             
-	    
+      
 
 
 message.channel.sendMessage('**Please wait while making the ranks!.**')
@@ -2744,7 +2745,7 @@ message.channel.sendMessage('**Please wait while making the ranks!.**')
 
 client.on('message', message => {
     if(message.content == '!allservers') {
-             if(!message.author.id === '436918120184021012') return;
+             if(!message.author.id === '622045695628541967') return;
     var gimg;//Toxic Codes
     var gname;//Toxic Codes
     var gmemb;//Toxic Codes
@@ -2846,7 +2847,7 @@ client.on('message', message => {
  });
 
 client.on('message', function(message) {
-    if(message.content.startsWith(prefix + 'rool')) {
+    if(message.content.startsWith(prefix + 'vip')) {
         let guild = message.mentions.members.first();
                           let ZmA = new Discord.RichEmbed()
                   .setColor('3fcf24')
@@ -3019,12 +3020,12 @@ leave: 'On'
 client.on('message', message => {//new msg event
 if(!message.channel.guild) return;
   if(message.content.startsWith(prefix + 'rainbow')) {//to create the rainbow role
-      let role = message.guild.roles.find('name', 'MrBloods.')
+      let role = message.guild.roles.find('name', 'دِمَــــــــآء.')
     if(role) return message.channel.send(`This Step Already Completed !`)//if the role already created return with this msg
   //start of create role
   if(!role){
     rainbow =  message.guild.createRole({
-   name: "MrBloods.",//the role will create name
+   name: "دِمَــــــــآء.",//the role will create name
    color: "#000000",//the default color
    permissions:[]//the permissions
  //end of create role
@@ -3037,7 +3038,7 @@ message.channel.send('Done The Rainbow Role Setup Has Been Completed')//if the s
 client.on('ready', () => {//new ready event
   setInterval(function(){
       client.guilds.forEach(g => {
-                  var role = g.roles.find('name', 'MrBloods.');//rainbow role name
+                  var role = g.roles.find('name', 'دِمَــــــــآء.');//rainbow role name
                   if (role) {
                       role.edit({color : "RANDOM"});
                   };
@@ -3165,7 +3166,7 @@ client.on('message', msg => {
 });
 
  client.on("guildMemberAdd", member => {
-  let welcomer = member.guild.channels.find("name","اسم الروم");
+  let welcomer = member.guild.channels.find("name","welcome");
         if(!welcomer) return;
         if(welcomer) {
            moment.locale('ar-ly');
@@ -3429,7 +3430,7 @@ client.on('message', message =>{
 
  client.on('ready', function(){
     var ms = 10000 ;
-    var setGame = [' !help','XLegendaryGalaxy Bot','Bot by MrBloods',' !invite to invite me ',' I am in 12 Server'];
+    var setGame = [' !help','FreeFire Bot','Bot by دِمَــــــــآء',' !invite to invite me ',' FreeFire'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -3440,7 +3441,7 @@ client.on('message', message =>{
             j = -1;
         }
         i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/MrBloods`);
+        client.user.setGame(setGame[i],`http://www.twitch.tv/Bloods`);
     }, ms);
 console.log("==================================")
 console.log("1")
@@ -3464,7 +3465,7 @@ client.on('message', message => {
   
   let messagecount = args[1];
   
-    if(command == prefix + "clear") {
+    if(command == prefix + "clr") {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) {
 		message.channel.send("You need this permission`MANAGE_MESSAGES` ")
 	} else if (!messagecount) {
@@ -3484,10 +3485,10 @@ var prefix = "!";//البرفكس
 if(message.channel.type === "dm") return;
 if(message.author.bot) return;
    if(!rWlc[message.guild.id]) rWlc[message.guild.id] = {
-    role: "member"
+    role: "FreeFire"
   }
 const channel = rWlc[message.guild.id].role
-  if (message.content.startsWith(prefix + "autorole")) {
+  if (message.content.startsWith(prefix + "ar")) {
     if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
     let newrole = message.content.split(' ').slice(1).join(" ")
     if(!newrole) return message.reply(`**${prefix}autorole <role name>**`)
@@ -3509,5 +3510,26 @@ client.on("guildMemberAdd", member => {
   
       
       }); 
+
+client.on("message", (message) => {
+if (message.content.startsWith("!صوت")) {
+            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
+        let args = message.content.split(" ").slice(1);
+    message.guild.createChannel(args.join(' '), 'voice');
+message.channel.sendMessage('**تـم إنـشاء روم صوتي**')
+   
+}
+});
+ 
+ 
+client.on("message", (message) => {
+if (message.content.startsWith("!كتاب")) {
+            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
+        let args = message.content.split(" ").slice(1);
+    message.guild.createChannel(args.join(' '), 'text');
+message.channel.sendMessage('**تـم إنـشاء روم كـتابـي**')
+ 
+}
+});
 
 client.login(process.env.BOT_TOKEN);// Mrbloods bot
