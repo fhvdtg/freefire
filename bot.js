@@ -3164,25 +3164,6 @@ client.on('message', msg => {
   if(msg.content === '!invite')
   msg.reply('https://discordapp.com/api/0oauth2/authorize?client_id=616260595041304590&permissions=8&scope=bot Link to invite the bot :new_moon_with_face:')
 });
-
- client.on("guildMemberAdd", member => {
-  let welcomer = member.guild.channels.find("name","welcome");
-        if(!welcomer) return;
-        if(welcomer) {
-           moment.locale('ar-ly');
-           var h = member.user;
-          let norelden = new Discord.RichEmbed()
-          .setColor('RANDOM')
-          .setThumbnail(h.avatarURL)
-          .setAuthor(h.username,h.avatarURL)
-          .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-           .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true) 
-           .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
-       welcomer.send({embed:norelden});          
-                 
-   
-        }
-        });
 		
 
 const invites = {};
@@ -3501,10 +3482,10 @@ fs.writeFile("./AutoRole.json", JSON.stringify(rWlc), function(e){
 });
 client.on("guildMemberAdd", member => {
       if(!rWlc[member.guild.id]) rWlc[member.guild.id] = {
-    role: "Verified?"
+    role: "FreeFire"
   }
     const sRole = rWlc[member.guild.id].role
-    let Rrole = member.guild.roles.find('name', sRole);
+    let Rrole = member.guild.roles.find('FreeFire', sRole);
   member.addRole(Rrole);
  
   
