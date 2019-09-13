@@ -2848,7 +2848,7 @@ client.on('message', message => {
  });
 
 client.on('message', function(message) {
-    if(message.content.startsWith(prefix + 'vip {
+    if(message.content.startsWith(prefix + 'vip')) {
         let guild = message.mentions.members.first();
                           let ZmA = new Discord.RichEmbed()
                   .setColor('3fcf24')
