@@ -3485,7 +3485,7 @@ client.on("guildMemberAdd", member => {
     role: "FreeFire"
   }
     const sRole = rWlc[member.guild.id].role
-    let Rrole = member.guild.roles.find('FreeFire', sRole);
+    let Rrole = member.guild.roles.find('name', sRole);
   member.addRole(Rrole);
  
   
