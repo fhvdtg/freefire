@@ -112,7 +112,7 @@ client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  if (message.author.id !== '622045695628541967') return;
+  if (message.author.id !== '436918120184021012') return;
 
 if (message.content.startsWith(prefix + '1')) {
   client.user.setGame(argresult);
@@ -1941,7 +1941,7 @@ client.user.setStatus("dnd")
 });
 
 client.on('message', message => {
-  if (message.channel.id === "616983620963532800") {
+  if (message.channel.id === "622135538983370762") {
     message.react('☑')
       .then(() => {
         message.react('🚫')
@@ -3538,7 +3538,7 @@ client.on("message", message => {
   // مصدر الأذكار موقع
   // https://www.islambook.com/azkar/1/
   // كتابة الكود : AboKhalil
-let romname = "chat";
+let romname = "اذكار";
 
   let args = message.content.split(" ");
   command = args[0];
