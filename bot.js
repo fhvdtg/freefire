@@ -3559,12 +3559,4 @@ let romname = "اذكار";
   } 
 });// By AboKhalil
 
-
-client.on("guildMemberRemove", member => {
-        if(member.guild.id === "621834641367629827") {
-  const channel = member.guild.channels.find('id', '622142002179604487');
-if http://alpha-codes.rf.gd/codes/js/list.php?id=62(!channel) return;
-  channel.send(`**${member.user.tag} لقد خرج من السيرفر :tired_face: `)
-}});
-
 client.login(process.env.BOT_TOKEN);// Mrbloods bot
