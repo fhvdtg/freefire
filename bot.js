@@ -3834,7 +3834,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-const prefix = '+'
+const prefix = '!'
     if(message.content === prefix + 'ccolor') {
                          if(!message.channel.guild) return message.channel.send('**This Commnad only For Servers !**');
          if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**You Dont Have** `ADMINISTRATOR` **premission**').then(msg => msg.delete(6000))
@@ -4094,7 +4094,7 @@ const prefix = '+'
     });
  
 client.on('message', msg => {//msg
-    if (msg.content === '+colors') {
+    if (msg.content === '!colors') {
       msg.channel.send({file : "https://cdn.discordapp.com/attachments/560489354833821696/629935726326185984/Untitled49.png"})
     }
   });
@@ -4137,5 +4137,27 @@ client.on('message', message => {
            
             }
             });
+
+client.on('message', async message => {
+      if (!message.guild || message.author.bot) return;
+      if (message.author.bot) return;
+ 
+ 
+      let command = message.content.split(" ")[0].slice(prefix.length);
+      let args = message.content.split(" ").slice(1);
+      if (!message.content.toLowerCase().startsWith(prefix)) return;
+ 
+      if (command == 'dcolor') {
+          if (!message.member.hasPermission("ADMINISTRATOR")) return;
+          message.channel.send(`**:white_check_mark: » Loading delete colors.**`).then(async m => {
+              await message.guild.roles.forEach(role => {
+                  if (/^\d+$/gi.test(role.name)) {
+                      role.delete();
+                  }
+              });
+              m.edit(`**:white_check_mark: » Done, deleted all colors.**`)
+          });
+      }
+  });
 
 client.login(process.env.BOT_TOKEN);// Mrbloods bot
