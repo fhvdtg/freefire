@@ -45,6 +45,10 @@ const afk = require('./afk.json');
 
 let vipKeys = JSON.parse(fs.readFileSync("./vipKeys.json", "utf8"));
 
+const allowed = require("./allowed.json")
+
+const path = require('./credits.json');
+
 const client = new Discord.Client();
 var prefix = "!";
 var adminprefix = '!'
@@ -4795,5 +4799,53 @@ if(credits[message.author.id].daily != moment().format('L')) {
    
  
 });
+
+client.on('message', message => {
+    let prefix = '$'
+    let msg = message;
+    let messageArray = message.content.split(' ')
+    let cmd = messageArray[0].toLowerCase()
+    let args = messageArray.slice(1)
+    if (message.author.id == 'هنا تحط ايديك عشان تتحكم ب الأد والريموف') {
+        if (cmd === `${prefix}add`) {
+            let array = [];
+            let mentioned = message.mentions.users.first() || message.guild.members.get(args[0]) // تعريف المنشن
+            if (!mentioned) return msg.reply('**Please provide a member\'s id / mention first**') // لو مافي منشن بيرسل كذا
+            if (allowed["allowed"].includes(mentioned.id)) return msg.reply('he\'s already added :/') // يتأكد لو الي انت بتضيفه موجود ولا لا
+            allowed["allowed"] === undefined ? allowed["allowed"] = array : null
+            allowed["allowed"].push(mentioned.id)
+            msg.reply(`Done i have added **${mentioned.username}** to the white list`)
+            fs.writeFile("./allowed.json", JSON.stringify(allowed, null, 4), err => {
+                if (err) {
+                    message.channel.send('Uh oh ... there\'s a problem!')
+                    return console.log(err)
+                }
+            })
+        }
+        else if (cmd === `${prefix}remove`) {
+            let mentioned = message.mentions.users.first() || message.guild.members.get(args[0]) // تعريف المنشن
+            if (!mentioned) return msg.reply('**Please provide a member\'s id / mention first**') // لو مافي منشن بيرسل كذا
+            if (allowed["allowed"] === undefined) return msg.reply('add someone first :/')
+            if (allowed["allowed"].includes(mentioned.id)) {
+                let Codes = allowed["allowed"].indexOf(mentioned.id)
+                allowed["allowed"].splice(Codes , 1)
+                msg.reply(`Done i have removed **${mentioned.username}** from the white list`)
+            } else {
+                return msg.reply('You kidding me... he\'s not even there')
+            }
+            fs.writeFile("./allowed.json", JSON.stringify(allowed, null, 4), err => {
+                if (err) {
+                    message.channel.send('Uh oh ... there\'s a problem!')
+                    return console.log(err)
+                }
+            })
+        }
+    }
+    if (allowed["allowed"].includes(message.author.id)) {
+        //حط اكوادك كلها هنا
+    } else {
+        return;
+    }
+})
 
 client.login(process.env.BOT_TOKEN);// Mrbloods bot
