@@ -4160,4 +4160,32 @@ client.on('message', async message => {
       }
   });
 
+client.on("message", message => {
+if(message.content.startsWith(prefix + "setby")) {
+    let args = message.mentions.channels.first();
+        if(!args) message.channel.send("** منشن روم . ❌**").then(m => {    
+m.delete(1500);
+})
+            if(!message.guild.member(message.author.id).hasPermission("MANAGE_CHANNELS")) return message.channel.send("**ليس لديك صلاحيات . ❌**");
+                    message.channel.send(`**${args}. لقد تم شغيل المغادرة هنا.**`);//By ItzTexo
+                client.on("guildMemberAdd", (member) => {
+                        if(member.user.bot) return;
+        var embed = new Discord.RichEmbed()
+        .setAuthor(member.user.username, member.user.avatarURL)
+        .setThumbnail(member.user.avatarURL)
+        .setTitle(`**__الله معاك ✋ 😢 😔__**`)
+        .addField('**__شكرا لوقتك__**  ',`${member}`)
+        .setDescription(`**__مع السلامه تشرفنا بك ✋😢 😔__** `)
+        .addField('👤   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
+        .setColor('RANDOM')
+        .setFooter(`==== نــتــمــنــآ لــكــم آســتــمـــتــآع ====`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
+   
+    var channel =member.guild.channels.find('name', 'leave')
+    if (!channel) return;
+    channel.send({embed : embed});
+    });
+ 
+}
+});
+
 client.login(process.env.BOT_TOKEN);// Mrbloods bot
