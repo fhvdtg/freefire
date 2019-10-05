@@ -4340,7 +4340,7 @@ client.on('message', async message => {
               if (data !== "no") {
                   i.setThumbnail(data.image);
                   i.addField('• General', `→ Name: \`${data.title}\`\n→ Price: \`${data.price.includes("$") ? "$" + data.price.split("$")[1] : data.price}\`\n→ Release \`${pretty(Date.now() - new Date(data.release).getTime())}\``);
-                  i.setFooter("Steam | LastBot.", "https://cdn.freebiesupply.com/images/large/2x/steam-logo-transparent.png");
+                  i.setFooter("Steam | FreeFire Bot.", "https://cdn.freebiesupply.com/images/large/2x/steam-logo-transparent.png");
  
                   await o.delete().catch(e => {});
                   await message.channel.send(i);
@@ -4353,7 +4353,7 @@ client.on('message', async message => {
   });
 
 client.on("message", function(message) {
-    var prefix = "+";
+    var prefix = "!";
    if(message.content.startsWith(prefix + "help")) {
     let messageArgs = message.content.split(" ").slice(1).join(" ");
     let messageRPS = message.content.split(" ").slice(2).join(" ");
@@ -4521,7 +4521,7 @@ const secre = [
  
  
  client.on('message', message => {
-   if (message.content.startsWith("+lk")) {
+   if (message.content.startsWith("!lk")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -4535,7 +4535,7 @@ const secre = [
 });
 
 client.on('message', puz => {
-    if (puz.content == "+lez") {
+    if (puz.content == "!lez") {
         var x = ["ما هي حاسة الشم عند الثعبان ؟",
 "ما هو الشي الذي يكسو الناس و هو عار بدون ملابس ؟",
 "ما هو الشي الذي لا يجري و لا يمشي ؟",
