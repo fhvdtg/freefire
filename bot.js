@@ -4844,6 +4844,6 @@ client.on('message', message => {
     } else {
         return;
     }
-})
+});
 
 client.login(process.env.BOT_TOKEN);// Mrbloods bot
