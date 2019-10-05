@@ -4194,13 +4194,31 @@ client.on('guildMemberAdd', member => {
     .setThumbnail(member.user.avatarURL)
 .addField('**__شكرا الانضمامك الينا__**  ',`${member}`)
      .addField(' **__Welcome To Server__**', `**${member.guild.name}**`,true)
-    .setImage('https://cdn.discordapp.com/attachments/580818609027416075/582000571397963796/tenor.gif')// صور ترحي
-    .setThumbnail('https://cdn.glitch.com/548ce615-2ad0-4e43-a1d8-16a0f3e68be0%2Fimage.png?1558210263214')//@〖D̷o̷̶Ḿa̶ |̷ B̷O̷Y̷〗#1362  حقوق
+    .setImage('https://cdn.discordapp.com/attachments/622135553009123338/622199518858838019/Untitled47.png')// صور ترحي
+    .setThumbnail('https://cdn.discordapp.com/attachments/560489354833821696/629950958494941204/Untitled251.png')//@〖D̷o̷̶Ḿa̶ |̷ B̷O̷Y̷〗#1362  حقوق
     .addField('**__انت العضو رقم__**',`**${member.guild.memberCount}**`)
     .setColor('RANDOM')
 var channel =member.guild.channels.find('name', 'welcome')// اسم شات ترحيب
 if (!channel) return;
 channel.send({embed : embed});
 });
+
+client.on("reachLimit", (limit)=> {
+  let log = limit.guild.channels.find( channel => channel.name === "security-log");
+  log.send(limit.user.username+"\** سيرفر بيتهكر ! ** ");
+  limit.guild.owner.send(limit.user.username+"\** سيرفرك بيتهكر ! ** ")
+  limit.member.roles.map(role => {
+    limit.member.removeRole(role.id)
+    .catch(log.send)
+  });
+});
+
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`:rose:  ولكم نورت السيرفر:rose:
+:crown:اسم العضو  ${member}:crown:  
+انت العضو رقم ${member.guild.memberCount} `)
+}).catch(console.error)
+})
 
 client.login(process.env.BOT_TOKEN);// Mrbloods bot
