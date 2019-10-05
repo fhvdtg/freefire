@@ -4161,31 +4161,46 @@ client.on('message', async message => {
   });
 
 client.on("message", message => {
-if(message.content.startsWith(prefix + "setby")) {
+  const args = message.content.split(' ');
+if(message.content.startsWith(prefix + "setwlc")) {
     let args = message.mentions.channels.first();
         if(!args) message.channel.send("** منشن روم . ❌**").then(m => {    
 m.delete(1500);
 })
             if(!message.guild.member(message.author.id).hasPermission("MANAGE_CHANNELS")) return message.channel.send("**ليس لديك صلاحيات . ❌**");
-                    message.channel.send(`**${args}. لقد تم شغيل المغادرة هنا.**`);//By ItzTexo
+                    message.channel.send(`**${args}. لقد تم شغيل الترحيب هنا.**`);//By ItzTexo
                 client.on("guildMemberAdd", (member) => {
                         if(member.user.bot) return;
-        var embed = new Discord.RichEmbed()
-        .setAuthor(member.user.username, member.user.avatarURL)
-        .setThumbnail(member.user.avatarURL)
-        .setTitle(`**__الله معاك ✋ 😢 😔__**`)
-        .addField('**__شكرا لوقتك__**  ',`${member}`)
-        .setDescription(`**__مع السلامه تشرفنا بك ✋😢 😔__** `)
-        .addField('👤   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
-        .setColor('RANDOM')
-        .setFooter(`==== نــتــمــنــآ لــكــم آســتــمـــتــآع ====`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
-   
-    var channel =member.guild.channels.find('name', 'leave')
-    if (!channel) return;
-    channel.send({embed : embed});
-    });
+                     var embed = new Discord.RichEmbed()
+.setAuthor(member.user.username, member.user.avatarURL)
+.setThumbnail(member.user.avatarURL)
+ .addField('**__شكرا الانضمامك الينا__**  ',`${member}`)
+     .addField(' **__Welcome To Server__**', `**${member.guild.name}**`,true)
+    .setImage('https://cdn.discordapp.com/attachments/580818609027416075/582000571397963796/tenor.gif')// صور ترحي
+    .setThumbnail('https://cdn.glitch.com/548ce615-2ad0-4e43-a1d8-16a0f3e68be0%2Fimage.png?1558210263214')//@〖D̷o̷̶Ḿa̶ |̷ B̷O̷Y̷〗#1362  حقوق
+    .addField('**__انت العضو رقم__**',`**${member.guild.memberCount}**`)
+    .setColor('RANDOM')
+var channel =member.guild.channels.find('name', 'welcome')// اسم شات ترحيب
+if (!channel) return;
+channel.send({embed : embed});
+});
  
 }
+});
+ 
+ 
+client.on('guildMemberAdd', member => {
+    var embed = new Discord.RichEmbed()
+    .setThumbnail(member.user.avatarURL)
+.addField('**__شكرا الانضمامك الينا__**  ',`${member}`)
+     .addField(' **__Welcome To Server__**', `**${member.guild.name}**`,true)
+    .setImage('https://cdn.discordapp.com/attachments/580818609027416075/582000571397963796/tenor.gif')// صور ترحي
+    .setThumbnail('https://cdn.glitch.com/548ce615-2ad0-4e43-a1d8-16a0f3e68be0%2Fimage.png?1558210263214')//@〖D̷o̷̶Ḿa̶ |̷ B̷O̷Y̷〗#1362  حقوق
+    .addField('**__انت العضو رقم__**',`**${member.guild.memberCount}**`)
+    .setColor('RANDOM')
+var channel =member.guild.channels.find('name', 'welcome')// اسم شات ترحيب
+if (!channel) return;
+channel.send({embed : embed});
 });
 
 client.login(process.env.BOT_TOKEN);// Mrbloods bot
