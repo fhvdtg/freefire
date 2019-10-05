@@ -47,8 +47,6 @@ let vipKeys = JSON.parse(fs.readFileSync("./vipKeys.json", "utf8"));
 
 const allowed = require("./allowed.json")
 
-const path = require('./credits.json');
-
 const client = new Discord.Client();
 var prefix = "!";
 var adminprefix = '!'
@@ -4801,7 +4799,7 @@ if(credits[message.author.id].daily != moment().format('L')) {
 });
 
 client.on('message', message => {
-    let prefix = '$'
+    let prefix = '!'
     let msg = message;
     let messageArray = message.content.split(' ')
     let cmd = messageArray[0].toLowerCase()
